@@ -16,8 +16,9 @@ export const fetchImages = async page => {
     // return data;
 
     const response = await unsplash.photos.listPhotos(page, 3);
-    const data = response.json();
-    if (response.status > 400) {
+    const data = await response.json();
+    console.log(data);
+    if (response.status >= 400) {
         throw new Error(data.errors);
     }
     return data;
