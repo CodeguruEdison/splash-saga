@@ -14,9 +14,9 @@ import { IMAGES } from '../constants';
 function* watchImagesLoad() {
     yield takeEvery(IMAGES.LOAD, handleImagesLoad);
 }
-const getPage = state => state.nextPage;
+export const getPage = state => state.nextPage;
 //workerSaga
-function* handleImagesLoad() {
+export function* handleImagesLoad() {
     // yield takeEvery(IMAGES.LOAD, handleImagesLoad);
     try {
         const page = yield select(getPage);
